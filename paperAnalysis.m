@@ -30,7 +30,7 @@ bodyAreas = [];
 correlationDCEandOEOT = []
 
 for k=1:length(mice)
-    load(['/media/gehrun01/Dropbox1/Dropbox/Cloud/CRUK CI/Masters Thesis/Framework/thesis-db/mat/' mice{k,1} '.mat']);
+    load(['/home/gehrun01/Desktop/mri-msot-data/mat/' mice{k,1} '.mat']);
     t2anatomical = [];
     dceMri = [];
     if(size(mouse.mri.t2,3)>1)
@@ -61,7 +61,7 @@ for k=1:length(mice)
      
 
     
-    load(['resources/body-rois/' mice{k,1} '.mat']);
+    load(['/home/gehrun01/Desktop/mri-msot-data/resources/body-rois/' mice{k,1} '.mat']);
     % Resolution correction
     % MSOT
     % 267x267 @ 20mm FOV: 75 micron/pixel
@@ -83,7 +83,7 @@ for k=1:length(mice)
   
     %figure;imshowpair(mouseMsot,t2anatomical,'montage')
 
-    load(['resources/registration-landmarks/' mice{k,1} '.mat']);
+    load(['/home/gehrun01/Desktop/mri-msot-data/resources/registration-landmarks/' mice{k,1} '.mat']);
     
     
     if size(mouseMsot)==[129 129]
@@ -121,10 +121,10 @@ for k=1:length(mice)
     
     for l=1:mice{k,3}
         
-        load(['resources/tumor-registration-landmarks/tumor_landmarks_' mice{k,1} '_' num2str(l) '.mat'])
-        load(['resources/tumor-registration-contours/' mice{k,1} '_msot_' num2str(l) '.mat']);
+        load(['/home/gehrun01/Desktop/mri-msot-data/resources/tumor-registration-landmarks/tumor_landmarks_' mice{k,1} '_' num2str(l) '.mat'])
+        load(['/home/gehrun01/Desktop/mri-msot-data/resources/tumor-registration-contours/' mice{k,1} '_msot_' num2str(l) '.mat']);
         tumorRoiMsot = tumorRoi;
-        load(['resources/tumor-registration-contours/' mice{k,1} '_mri_' num2str(l) '.mat']);
+        load(['/home/gehrun01/Desktop/mri-msot-data/resources/tumor-registration-contours/' mice{k,1} '_mri_' num2str(l) '.mat']);
         tumorRoiMri = tumorRoi;
         %figure;imshow(tumorRoiMri)
         %figure;imshow(tumorRoiMsot)
