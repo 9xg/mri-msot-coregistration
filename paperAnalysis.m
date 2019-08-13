@@ -289,6 +289,10 @@ oldIQR = iqr(diceCoefficientsForTumorRegistration(:,1));
 newMedian = median(diceCoefficientsForTumorRegistration(:,2));
 newIQR = iqr(diceCoefficientsForTumorRegistration(:,2));
 
+miceTumorColors = [[252/255,141/255,89/255];[252/255,141/255,89/255];[252/255,141/255,89/255];[252/255,141/255,89/255];[252/255,141/255,89/255];[252/255,141/255,89/255];[145/255,191/255,219/255];[145/255,191/255,219/255];[145/255,191/255,219/255];[145/255,191/255,219/255];[145/255,191/255,219/255];[145/255,191/255,219/255];[145/255,191/255,219/255];[145/255,191/255,219/255];[145/255,191/255,219/255];
+    [252/255,141/255,89/255];[252/255,141/255,89/255];[252/255,141/255,89/255];[252/255,141/255,89/255];[252/255,141/255,89/255];[252/255,141/255,89/255];[145/255,191/255,219/255];[145/255,191/255,219/255];[145/255,191/255,219/255];[145/255,191/255,219/255];[145/255,191/255,219/255];[145/255,191/255,219/255];[145/255,191/255,219/255];[145/255,191/255,219/255];[145/255,191/255,219/255]]
+
+%{'NH','NH','NH','NH','NH','NH','H','H','H','H','H','H','H','H','H'}
 
 
 figure;hold on;
@@ -297,7 +301,7 @@ line([1 1], [newMedian-0.5*newIQR, newMedian+0.5*newIQR],'Color',[0.5 0.5 0.5],'
 % and the medians
 line([-0.1 0.1],[oldMedian oldMedian],'Color','red','LineWidth',5)
 line([0.9 1.1],[newMedian newMedian],'Color','red','LineWidth',5)
-scatter([zeros(length(diceCoefficientsForTumorRegistration),1)+jitterValuesX;ones(length(diceCoefficientsForTumorRegistration),1)+jitterValuesX2],[diceCoefficientsForTumorRegistration(:,1);diceCoefficientsForTumorRegistration(:,2)],150,[0 0 0],'filled','o');
+scatter([zeros(length(diceCoefficientsForTumorRegistration),1)+jitterValuesX;ones(length(diceCoefficientsForTumorRegistration),1)+jitterValuesX2],[diceCoefficientsForTumorRegistration(:,1);diceCoefficientsForTumorRegistration(:,2)],150,miceTumorColors,'filled','o');
 hold off;
 plt = Plot();
 plt.ShowBox = false;
